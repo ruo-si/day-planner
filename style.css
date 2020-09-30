@@ -36,6 +36,10 @@ textarea{
   border-top: 1px solid white;;
 }
 
+.hour-text{
+  font-size: xx-large;
+}
+
 .hour {
   background-color: #ffffff;
   color: #000000;
