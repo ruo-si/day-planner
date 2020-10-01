@@ -20,4 +20,4 @@ https://github.com/victoriacmlee/day-planner
 Project Web Link:
 https://victoriacmlee.github.io/day-planner/
 
-Project Screenshots in images folder.
+Project Screenshots in assets folder.
