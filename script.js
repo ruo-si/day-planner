@@ -1,37 +1,25 @@
 // docuement ready, clear all element values
 $(document).ready(function () {
 
-    console.log("being script.js");
-
     // define all targeted reference with var elements
     var currentDate = moment().format("MMMM Do YYYY, h:mm a");
-    var todayIs = moment().format("[Today is] dddd [!]")
-    var currentDayObj = new Date()
+    var todayIs = moment().format("[Today is] dddd [!]");
+    var currentDayObj = new Date();
 
-    // toRead function
-    function toRead() {
+    hourDisplayArr = ["09AM", "10 AM", "11 AM", "12 PM", "01 PM", "02 PM", "03 PM", "04 PM", "05 PM"]
+    hourIdsArr = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
 
-        console.log("in toRead")
 
-        // get time values from storage
-        
-        // loop and assign time property as text to appropriate time
+    // function to set up table
+    function setUp() {
+
+        console.log("in setUp")
 
         // display today is weekday on title
         $("#today-is").text(todayIs);
 
         // display present date on page
-        $("#currentDay").text(currentDate);
-    };
-
-
-    function setUp() {
-
-        console.log("in setUp")
-
-        // set up array to loop 
-        hourDisplayArr = [9, 10, 11, 12, 1, 2, 3, 4, 5]
-        hourIdsArr = [9,10,11,12,13,14,15,16,17]
+        $("#currentDay").append(currentDate);
 
         // loop to create and format framework
         for (var i = 0; i < hourDisplayArr.length; i++) {
@@ -58,45 +46,63 @@ $(document).ready(function () {
             $(textAreaEl).after(saveBtnEl);
 
 
-            // check time to see if time if .past, .present or .future and add appropriate class
-
-            // hour now
+            // hour now variable
             var currentHour = currentDayObj.getHours()
-            // hour Id on time-block
+            // hour Id on time-block variable
             var timeblockId = hourIdsArr[i]
 
+            // check time to see if time if .past, .present or .future and add appropriate class
+            if (currentHour < timeblockId) {
 
-            if (currentHour < timeblockId){
-               
                 $(rowEl).addClass("future");
             }
 
-            else if (currentHour === timeblockId){
+            else if (currentHour === timeblockId) {
 
                 $(rowEl).addClass("present");
             }
 
             else $(rowEl).addClass("past");
-        }
 
-        toRead();
+
+            // get data from locaoStorage 
+            var storedValue = localStorage.getItem(hourIdsArr[i]);
+
+            // append to textarea
+            textAreaEl.text(storedValue);
+
+
+
+            // eventListener on save button
+            saveBtnEl.on("click", toWrite)
+        };
     };
-
-    // saveBtnEl.on("click") call function toWrite ()
-    // $(".saveBtn").on("click", toWrite())
-
 
     // toWrite function
     function toWrite() {
 
-        console.log("in toWrite")
+        console.log($(this).siblings(".description").val().trim())
+        console.log($(this).siblings(".hour").attr("id"))
 
         // get value of textarea and .trim()
-        // save relevant text to local storage
-        // localStorage.setItem("textAreaVal");
+        var textAreaVal = $(this).siblings(".description").val().trim()
+        var hourKey = $(this).siblings(".hour").attr("id")
 
+        // save relevant text to local storage
+        localStorage.setItem(hourKey, textAreaVal);
     };
-    // call toRead()
+
+
+    //clear button
+    $(".clearBtn").on("click", clearStorage);
+
+    function clearStorage() {
+        localStorage.clear();
+    };
+
+
+    // function call setUp on document load
     setUp();
+
 
 });
