@@ -10,15 +10,13 @@ color: rgb(200, 200, 200);
 */
 
 body {
-
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1;
   background: rgb(240, 240, 240);
 }
 
-textarea{
-
+textarea {
   background: transparent;
   border: none;
   resize: none;
@@ -34,28 +32,25 @@ textarea{
   font-family: 'Oswald', sans-serif;
 }
 
-.description{
+.description {
   white-space: pre-wrap;
 }
 
-.time-block{
+.time-block {
   text-align: center;
 }
 
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
+  ;
 }
 
-.hour-text{
+.hour-text {
   padding-top: 20px;
   font-size: xx-large;
   font-family: 'Oswald', sans-serif;
-}
-
-.hour {
-  color: #000000;
 }
 
 .past {
@@ -69,7 +64,7 @@ textarea{
 }
 
 .future {
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(215, 215, 215);
   color: white;
 }
 
@@ -78,6 +73,18 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: transparent;
   color: rgb(200, 200, 200);
+}
+
+.hour {
+  color: rgb(200, 200, 200);
+}
+
+.hour-present {
+  color: black;
+}
+
+.hour-future {
+  color: rgb(240, 240, 240);
 }
 
 .saveBtn i:hover {

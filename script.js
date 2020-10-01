@@ -37,7 +37,7 @@ $(document).ready(function () {
             var saveBtnEl = $("<button>").addClass("btn col-md-1 saveBtn");
 
             // icon
-            var iconEl = $("<i>").attr("class","fas fa-pen")
+            var iconEl = $("<i>").attr("class", "fas fa-pen")
 
             // append elements to container/page
             $(".container").append(rowEl);
@@ -60,14 +60,18 @@ $(document).ready(function () {
             if (currentHour < timeblockId) {
 
                 $(rowEl).addClass("future");
+                $(hourEl).addClass("hour-future");
             }
 
-            else if (currentHour === timeblockId) {
+            else if (currentHour > timeblockId) {
 
+                $(rowEl).addClass("past");
+            }
+
+            else {
                 $(rowEl).addClass("present");
+                $(hourEl).addClass("hour-present");
             }
-
-            else $(rowEl).addClass("past");
 
 
             // get data from locaoStorage 
