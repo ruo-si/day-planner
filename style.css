@@ -1,15 +1,28 @@
+/* colour code references
+(RGB)
+
+overall background off-white
+background: rgb(240, 240, 240);
+
+accent gray
+color: rgb(200, 200, 200);
+
+*/
+
 body {
-  font-family: 'Open Sans', sans-serif;
+
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background: rgb(240, 240, 240);
 }
 
 textarea{
+
   background: transparent;
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
   padding: 10px;
 }
 
@@ -18,7 +31,7 @@ textarea{
   background-color: transparent;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  font-family: 'Oswald', sans-serif;
 }
 
 .description{
@@ -27,7 +40,6 @@ textarea{
 
 .time-block{
   text-align: center;
-  border-radius: 15px;
 }
 
 .row {
@@ -37,36 +49,35 @@ textarea{
 }
 
 .hour-text{
+  padding-top: 20px;
   font-size: xx-large;
+  font-family: 'Oswald', sans-serif;
 }
 
 .hour {
-  background-color: #ffffff;
   color: #000000;
-  border-top: 1px dashed #000000;
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: rgb(230, 230, 230);
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: rgb(245, 245, 245);
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: rgb(245, 245, 245);
   color: white;
 }
 
 .saveBtn {
-  border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06AED5;
-  color: white;
+  background-color: transparent;
+  color: rgb(200, 200, 200);
 }
 
 .saveBtn i:hover {

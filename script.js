@@ -28,7 +28,7 @@ $(document).ready(function () {
             var rowEl = $("<div>").addClass("row time-block");
 
             // hour block, add id and classes to all 
-            var hourEl = $("<div>").addClass("hour col-md-2 hour-text").text(hourDisplayArr[i]).attr("id", hourIdsArr[i]);
+            var hourEl = $("<div>").addClass("hour col-md-2 hour-text").text(hourDisplayArr[i] + " ---").attr("id", hourIdsArr[i]);
 
             // text area, add id and classes to all 
             var textAreaEl = $("<textarea>").addClass("col-md-9 description");
