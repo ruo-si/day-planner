@@ -6,7 +6,7 @@ $(document).ready(function () {
     var todayIs = moment().format("[Today is] dddd [!]");
     var currentDayObj = new Date();
 
-    hourDisplayArr = ["09AM", "10 AM", "11 AM", "12 PM", "01 PM", "02 PM", "03 PM", "04 PM", "05 PM"]
+    hourDisplayArr = ["09 AM", "10 AM", "11 AM", "12 PM", "01 PM", "02 PM", "03 PM", "04 PM", "05 PM"]
     hourIdsArr = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
 
 
@@ -24,17 +24,20 @@ $(document).ready(function () {
         // loop to create and format framework
         for (var i = 0; i < hourDisplayArr.length; i++) {
 
-            // create row container, add id and classes to all 
+            // row container, add id and classes to all 
             var rowEl = $("<div>").addClass("row time-block");
 
-            // add hour block, add id and classes to all 
+            // hour block, add id and classes to all 
             var hourEl = $("<div>").addClass("hour col-md-2 hour-text").text(hourDisplayArr[i]).attr("id", hourIdsArr[i]);
 
-            // add text area, add id and classes to all 
+            // text area, add id and classes to all 
             var textAreaEl = $("<textarea>").addClass("col-md-9 description");
 
-            // add button, add id and classes to all 
+            // button, add id and classes to all 
             var saveBtnEl = $("<button>").addClass("btn col-md-1 saveBtn");
+
+            // icon
+            var iconEl = $("<i>").attr("class","fas fa-pen")
 
             // append elements to container/page
             $(".container").append(rowEl);
@@ -44,6 +47,8 @@ $(document).ready(function () {
             $(hourEl).after(textAreaEl);
 
             $(textAreaEl).after(saveBtnEl);
+
+            $(saveBtnEl).append(iconEl);
 
 
             // hour now variable
@@ -75,6 +80,7 @@ $(document).ready(function () {
 
             // eventListener on save button
             saveBtnEl.on("click", toWrite)
+
         };
     };
 
@@ -92,12 +98,12 @@ $(document).ready(function () {
         localStorage.setItem(hourKey, textAreaVal);
     };
 
-
-    //clear button
-    $(".clearBtn").on("click", clearStorage);
+    //clear button eventListener
+    $("#clearBtn").on("click", clearStorage);
 
     function clearStorage() {
-        localStorage.clear();
+        localStorage.clear()
+        $(".description").empty()
     };
 
 
