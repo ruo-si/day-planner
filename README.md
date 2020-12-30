@@ -18,6 +18,6 @@ Project Repository Link:
 https://github.com/rialee/day-planner
 
 Project Web Link:
-https://victoriacmlee.github.io/day-planner/
+https://rialee.github.io/day-planner/
 
 Project Screenshots in assets folder.
