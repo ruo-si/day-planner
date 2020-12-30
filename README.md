@@ -15,7 +15,7 @@ Areas of focus:
 
 
 Project Repository Link:
-https://github.com/victoriacmlee/day-planner
+https://github.com/rialee/day-planner
 
 Project Web Link:
 https://victoriacmlee.github.io/day-planner/
